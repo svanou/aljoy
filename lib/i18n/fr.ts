@@ -1,4 +1,5 @@
 export const french: Record<string, string> = {
+  "Technologies we use": "Technologies utilisées",
   "Loading your workspace…": "Chargement de votre espace de travail…",
   "Invalid login credentials": "Adresse e-mail ou mot de passe incorrect.",
   "Email not confirmed": "Confirmez votre adresse e-mail avant de vous connecter.",
