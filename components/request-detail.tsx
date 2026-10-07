@@ -83,7 +83,7 @@ export function RequestDetail({ id, initial, demo = false, admin, comments: init
     }
     else
         await revision(id, note); setRev(false); })}><label className="field">{t("What should change?")}<textarea name="note" required maxLength={10000}/></label><Button disabled={busy}>{t("Send revision request")}</Button></form>}</div>}</section>
-    <section className="detail-box"><h3>{t("Conversation")}</h3>{comments.map(c => <div className="comment" key={c.id}><p>{c.body}</p><small style={{ color: 'var(--muted)' }}>{new Date(c.created_at).toLocaleString(locale === 'fr' ? 'fr-FR' : 'en-GB')}</small></div>)}{!comments.length && <p>{t("Questions, context and updates \u2014 all in one place.")}</p>}<form action={f => run(async () => { const body = String(f.get('body')); if (demo) {
+    <section className="detail-box"><h3>{t("Conversation")}</h3>{comments.map(c => <div className="comment" key={c.id}><p>{c.body}</p><small style={{ color: 'var(--muted)' }}>{new Date(c.created_at).toLocaleString(locale === 'fr' ? 'fr-FR' : 'en-GB')}</small></div>)}{!comments.length && <p>{t("Questions, context and updates, all in one place.")}</p>}<form action={f => run(async () => { const body = String(f.get('body')); if (demo) {
         const next = [...comments, { id: crypto.randomUUID(), body, author_id: 'demo', created_at: new Date().toISOString() }];
         setComments(next);
         localStorage.setItem('aiflow-comments-' + id, JSON.stringify(next));

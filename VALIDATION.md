@@ -1,4 +1,4 @@
-# Validation du MVP — 7 octobre 2026
+# Validation du MVP, 7 octobre 2026
 
 Vérifications exécutées sans credentials externes, avec Node.js 24.19.0 et Chromium 151 :
 

@@ -1,4 +1,4 @@
 import { getTranslations } from '@/lib/i18n/server';
 import { ImageResponse } from 'next/og';import { site } from '@/config/site';
-export const size={width:1200,height:630};export const contentType='image/png';export const alt='AIflow — Your AI team. One subscription.';
+export const size={width:1200,height:630};export const contentType='image/png';export const alt='AIflow, Your AI team. One subscription.';
 export default async function Image(){const {t}=await getTranslations();return new ImageResponse(<div style={{display:'flex',flexDirection:'column',justifyContent:'space-between',width:'100%',height:'100%',background:'#fafbf7',padding:'70px',color:'#202923'}}><div style={{display:'flex',fontSize:35}}>{site.brand}.</div><div style={{display:'flex',flexDirection:'column',fontSize:90,letterSpacing:-5,lineHeight:1.05}}><span>{t(site.heroLines[0])}</span><span>{t(site.heroLines[1])}</span></div><div style={{display:'flex',fontSize:23,color:'#71776e'}}>{t('Unlimited requests · One at a time · Cancel anytime')}</div></div>,size)}

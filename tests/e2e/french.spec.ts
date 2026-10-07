@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 test('French landing, billing feedback and English switch', async ({ page }) => {
   await page.goto('/?lang=fr');
   await expect(page.locator('html')).toHaveAttribute('lang', 'fr');
-  await expect(page).toHaveTitle('AIflow — Votre équipe IA. Un seul abonnement.');
+  await expect(page).toHaveTitle('AIflow, Votre équipe IA. Un seul abonnement.');
   await expect(page.getByRole('heading', {name: 'Votre équipe IA. Un seul abonnement.'})).toBeVisible();
   await expect(page.getByRole('heading', {name: 'Agents IA', exact: true})).toBeVisible();
   await page.getByRole('link', {name: 'Découvrir le fonctionnement', exact: true}).click();
@@ -58,7 +58,7 @@ test('French admin advances the demo queue', async ({ page }) => {
 
 test('French authentication feedback and preference survive navigation', async ({ page }) => {
   await page.goto('/login?lang=fr');
-  await expect(page).toHaveTitle('Connexion client — AIflow');
+  await expect(page).toHaveTitle('Connexion client, AIflow');
   await page.getByLabel('E-mail', {exact: true}).fill('demo@example.com');
   await page.getByLabel('Mot de passe', {exact: true}).fill('demopassword');
   await page.getByRole('button', {name: 'Se connecter', exact: true}).click();
