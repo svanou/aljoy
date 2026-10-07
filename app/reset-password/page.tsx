@@ -1,0 +1,1 @@
+import { Navigation } from '@/components/navigation';import { AuthForm } from '@/components/auth-form';export default function Page(){return <><Navigation/><main className="auth"><h1>Reset password.</h1><p>We’ll send you a secure link.</p><AuthForm mode="reset"/></main></>}

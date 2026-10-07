@@ -1,0 +1,2 @@
+import { NextResponse } from 'next/server';import { supabase } from '@/lib/supabase';import { site } from '@/config/site';
+export async function GET(req:Request){const url=new URL(req.url);const code=url.searchParams.get('code');if(code){const db=await supabase();const {error}=await db.auth.exchangeCodeForSession(code);if(!error){const next=url.searchParams.get('next');return NextResponse.redirect(new URL(next==='/update-password'?next:'/dashboard',site.domain))}}return NextResponse.redirect(new URL('/login?error=confirmation',site.domain))}

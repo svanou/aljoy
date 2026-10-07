@@ -1,0 +1,1 @@
+import { Navigation } from '@/components/navigation';import { AuthForm } from '@/components/auth-form';export const metadata={title:'Client login',description:'Sign in to your AIflow workspace.'};export default function Page(){return <><Navigation/><main className="auth"><h1>Welcome back.</h1><p>Your next idea is waiting.</p><AuthForm mode="login"/></main></>}

@@ -1,0 +1,4 @@
+'use client';
+import { useEffect } from 'react';
+export function track(event:string,properties:Record<string,unknown>={}){const key=process.env.NEXT_PUBLIC_POSTHOG_KEY;if(!key)return;void fetch(`${process.env.NEXT_PUBLIC_POSTHOG_HOST||'https://us.i.posthog.com'}/capture/`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({api_key:key,event,properties:{...properties,distinct_id:localStorage.getItem('analytics-id')||'anonymous'}})}).catch(()=>{});}
+export function Analytics(){useEffect(()=>{if(!localStorage.getItem('analytics-id'))localStorage.setItem('analytics-id',crypto.randomUUID());track('landing_view');const el=document.getElementById('pricing');if(!el)return;const o=new IntersectionObserver(e=>{if(e[0].isIntersecting){track('pricing_view');o.disconnect()}},{threshold:.3});o.observe(el);return()=>o.disconnect()},[]);return null}

@@ -1,0 +1,11 @@
+node_modules
+.next
+.env*
+!.env.example
+test-results
+playwright-report
+
+# Generated TypeScript and local hosting metadata
+*.tsbuildinfo
+next-env.d.ts
+.vercel

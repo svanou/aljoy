@@ -1,0 +1,1 @@
+import { Navigation } from '@/components/navigation';import { AuthForm } from '@/components/auth-form';export default function Page(){return <><Navigation/><main className="auth"><h1>Let’s get to work.</h1><p>Create your account, then choose your subscription.</p><AuthForm mode="signup"/></main></>}
