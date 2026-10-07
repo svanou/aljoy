@@ -1,1 +1,4 @@
-import { Navigation } from '@/components/navigation';import { AuthForm } from '@/components/auth-form';export default function Page(){return <><Navigation/><main className="auth"><h1>Reset password.</h1><p>We’ll send you a secure link.</p><AuthForm mode="reset"/></main></>}
+import { getTranslations } from '@/lib/i18n/server';
+import { Navigation } from '@/components/navigation';
+import { AuthForm } from '@/components/auth-form';
+export default async function Page() { const { t, locale } = await getTranslations(); return <><Navigation /><main className="auth"><h1>{t("Reset password.")}</h1><p>{t("We\u2019ll send you a secure link.")}</p><AuthForm mode="reset"/></main></>; }

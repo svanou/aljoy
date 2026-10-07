@@ -27,6 +27,14 @@ npm run test:e2e
 
 Pour Playwright, définir `CHROMIUM_PATH` vers un Chromium installé. La configuration utilise `/usr/bin/chromium` dans cet environnement. Les tests de checkout sans credentials attendent une réponse de configuration manquante. Exécuter ces tests avec les intégrations non configurées.
 
+## Versions française et anglaise
+
+Le sélecteur **FR / EN** est disponible dans la navigation et dans les espaces client et administrateur. Le choix est conservé pendant un an dans un cookie de préférence et reste actif après navigation ou rechargement.
+
+Pour partager une version précise : `/?lang=fr` ou `/?lang=en`. La démo française est disponible à `/dashboard?demo=1&lang=fr` et `/admin?demo=1&lang=fr`. La langue par défaut reste l’anglais. Les libellés, pages d’authentification, messages applicatifs, exemples de démo, dates, montants et métadonnées sont traduits. Les catégories et statuts gardent leurs valeurs techniques en base ; les demandes et commentaires créés par les utilisateurs ne sont pas traduits automatiquement.
+
+Les traductions se trouvent dans `lib/i18n/fr.ts`. Les réponses inconnues d’un service externe conservent leur texte d’origine. Les e-mails transactionnels des intégrations externes restent dans leur langue d’origine.
+
 ## Configuration du produit
 
 - `config/site.ts` : marque, domaine, email, tagline, titre et sous-titre hero, promesse de délai, lien de call, futurs logos et témoignages. Le lien de call est provisoirement un email : remplacer `callUrl` par votre calendrier réel.
